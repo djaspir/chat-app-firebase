@@ -7,8 +7,8 @@ import db from "../../utils/db.json";
 
 const useStyles = makeStyles()(() => ({
   avatar: {
-    height: "50px",
     width: "50px",
+    height: "50px",
   },
 
   scrollBox: {

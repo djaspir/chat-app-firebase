@@ -9,11 +9,19 @@ import App from "./App";
 const theme = createTheme({
   components: {
     MuiCssBaseline: {
-      styleOverrides: `
-        ::-webkit-scrollbar {
-          width: 10px;
+      styleOverrides: {
+        "::-webkit-scrollbar": {
+          width: "10px"
+        },
+        "::-webkit-scrollbar-track": {
+          backgroundColor: "transparent"
+        },
+        "::-webkit-scrollbar-thumb": {
+          backgroundColor: "#d6dee1",
+          borderRadius: "20px",
+          width: "10px"
         }
-      `,
+      }
     },
   },
 
