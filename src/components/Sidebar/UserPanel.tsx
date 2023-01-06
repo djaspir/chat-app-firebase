@@ -1,4 +1,6 @@
 import AddIcon from "@mui/icons-material/Add";
+import Brightness4Icon from "@mui/icons-material/Brightness4";
+import Brightness7Icon from "@mui/icons-material/Brightness7";
 import MoreHorizIcon from "@mui/icons-material/MoreHoriz";
 import Avatar from "@mui/material/Avatar";
 import Box from "@mui/material/Box";
@@ -6,15 +8,15 @@ import IconButton from "@mui/material/IconButton";
 import Typography from "@mui/material/Typography";
 import { makeStyles } from "tss-react/mui";
 
-const useStyles = makeStyles()({
+const useStyles = makeStyles()((theme) => ({
   bold: {
-    fontweight: 700,
+    fontWeight: 700,
   },
 
   iconButton: {
-    // backgroundColor: "#f0f2f5",
+    marginLeft: theme.spacing(1),
   },
-});
+}));
 
 const UserPanel = () => {
   const { classes } = useStyles();
@@ -24,8 +26,7 @@ const UserPanel = () => {
       display="flex"
       alignItems="center"
       justifyContent="space-between"
-      mx={"16px"}
-      my={"20px"}
+      m={2}
     >
       <Box display="flex" alignItems="center" width="100%">
         <Avatar />
@@ -36,12 +37,21 @@ const UserPanel = () => {
         </Box>
       </Box>
       <Box display="flex" alignItems="center">
-        <IconButton size="small" className={classes.iconButton}>
+        <IconButton className={classes.iconButton}>
           <MoreHorizIcon />
         </IconButton>
-        <IconButton size="small">
+        <IconButton className={classes.iconButton}>
           <AddIcon />
         </IconButton>
+        {true ? (
+          <IconButton className={classes.iconButton}>
+            <Brightness4Icon />
+          </IconButton>
+        ) : (
+          <IconButton className={classes.iconButton}>
+            <Brightness7Icon />
+          </IconButton>
+        )}
       </Box>
     </Box>
   );
