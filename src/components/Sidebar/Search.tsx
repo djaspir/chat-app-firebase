@@ -1,5 +1,29 @@
+import Box from "@mui/material/Box";
+import Input from "@mui/material/Input";
+import { makeStyles } from "tss-react/mui";
+
+const useStyles = makeStyles()((theme) => ({
+  input: {
+    borderRadius: "50px",
+    paddingLeft: theme.spacing(2),
+    paddingRight: theme.spacing(2),
+    backgroundColor: "rgba(0, 0, 0, 0.05)",
+  },
+}));
+
 const Search = () => {
-  return <div>Search</div>;
+  const { classes } = useStyles();
+
+  return (
+    <Box m={2}>
+      <Input
+        className={classes.input}
+        fullWidth
+        disableUnderline
+        placeholder="Search Chat"
+      />
+    </Box>
+  );
 };
 
 export default Search;

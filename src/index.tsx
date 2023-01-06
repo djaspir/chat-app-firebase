@@ -1,21 +1,39 @@
-import { CssBaseline, PaletteOptions } from "@mui/material";
+import { CssBaseline } from "@mui/material";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
 import React from "react";
 import ReactDOM from "react-dom/client";
 import App from "./App";
 
-type CustomPaletteOptions = PaletteOptions & {
-  type: string;
-};
-
 // TODO Theming with Redux
 
-const theme = createTheme({});
+const theme = createTheme({
+  components: {
+    MuiCssBaseline: {
+      styleOverrides: `
+        ::-webkit-scrollbar {
+          width: 10px;
+        }
+      `,
+    },
+  },
+
+  typography: {
+    button: {
+      textTransform: "none",
+    },
+  },
+});
 
 const darkTheme = createTheme({
+  typography: {
+    button: {
+      textTransform: "none",
+    },
+  },
+
   palette: {
-    type: "dark",
-  } as CustomPaletteOptions,
+    mode: "dark",
+  },
 });
 
 const root = ReactDOM.createRoot(
