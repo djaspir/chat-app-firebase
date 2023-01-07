@@ -1,4 +1,5 @@
 import { Box, Input } from "@mui/material";
+import { useState } from "react";
 import { makeStyles } from "tss-react/mui";
 
 const useStyles = makeStyles()((theme) => ({
@@ -12,14 +13,17 @@ const useStyles = makeStyles()((theme) => ({
 
 const Search = () => {
   const { classes } = useStyles();
+  const [input, setInput] = useState("")
 
   return (
-    <Box m={2}>
+    <Box m={2} mt={1}>
       <Input
         className={classes.input}
         fullWidth
         disableUnderline
         placeholder="Search Chat"
+        onChange={(e)=>setInput(e.target.value)}
+        value={input}
       />
     </Box>
   );

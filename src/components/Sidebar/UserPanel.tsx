@@ -4,10 +4,11 @@ import Brightness7Icon from "@mui/icons-material/Brightness7";
 import MoreHorizIcon from "@mui/icons-material/MoreHoriz";
 import { Avatar, Box, IconButton, Typography } from "@mui/material";
 import { makeStyles } from "tss-react/mui";
+import db from "../../utils/db.json";
 
 const useStyles = makeStyles()((theme) => ({
   title: {
-    marginLeft: theme.spacing(1),
+    marginLeft: theme.spacing(2),
     fontWeight: 700,
   },
 
@@ -19,11 +20,12 @@ const useStyles = makeStyles()((theme) => ({
 const UserPanel = () => {
   const { classes } = useStyles();
   const darkTheme = false;
+  const user = db.users[0];
 
   return (
     <Box display="flex" justifyContent="space-between" m={2}>
       <Box display="flex" alignItems="center">
-        <Avatar />
+        <Avatar src={`${user.photoURL}`} />
         <Typography className={classes.title} variant="h5">
           Chats
         </Typography>

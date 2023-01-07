@@ -24,7 +24,8 @@ const useStyles = makeStyles()((theme) => ({
 const Groups = () => {
   const { classes } = useStyles();
   const groups = db.groups;
-  const activeId = "g1";
+  const activeGroup = db.groups[0];
+  const privateReciever = db.users[1];
 
   return (
     <Box
@@ -38,11 +39,15 @@ const Groups = () => {
         <Button
           key={group.id}
           className={`${classes.button} ${
-            group.id === activeId ? classes.active : ""
+            group.id === activeGroup.id ? classes.active : ""
           }`}
         >
           <Box display="flex" width="100%" p={1}>
-            <Avatar className={classes.avatar} />
+            <Avatar className={classes.avatar} src={
+              group.type === 'public'
+              ? `https://avatars.dicebear.com/api/initials/${group.name}.svg`
+              : privateReciever.photoURL
+            } />
             <Box
               display="flex"
               flexDirection="column"
