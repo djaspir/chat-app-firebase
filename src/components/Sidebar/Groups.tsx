@@ -5,6 +5,11 @@ import db from "../../utils/db.json";
 const useStyles = makeStyles()((theme) => ({
   scrollBox: {
     overflowY: "scroll",
+    overflowX: "hidden",
+
+    [theme.breakpoints.down("sm")]: {
+      margin: "0",
+    },
   },
 
   button: {
@@ -42,12 +47,15 @@ const Groups = () => {
             group.id === activeGroup.id ? classes.active : ""
           }`}
         >
-          <Box display="flex" width="100%" p={1}>
-            <Avatar className={classes.avatar} src={
-              group.type === 'public'
-              ? `https://avatars.dicebear.com/api/initials/${group.name}.svg`
-              : privateReciever.photoURL
-            } />
+          <Box display="flex" alignItems="center" width="100%" p={1}>
+            <Avatar
+              className={classes.avatar}
+              src={
+                group.type === "public"
+                  ? `https://avatars.dicebear.com/api/initials/${group.name}.svg`
+                  : privateReciever.photoURL
+              }
+            />
             <Box
               display="flex"
               flexDirection="column"

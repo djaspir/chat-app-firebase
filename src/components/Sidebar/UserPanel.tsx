@@ -23,7 +23,7 @@ const UserPanel = () => {
   const user = db.users[0];
 
   return (
-    <Box display="flex" justifyContent="space-between" m={2}>
+    <Box display="flex" justifyContent="space-between" m={3}>
       <Box display="flex" alignItems="center">
         <Avatar src={`${user.photoURL}`} />
         <Typography className={classes.title} variant="h5">

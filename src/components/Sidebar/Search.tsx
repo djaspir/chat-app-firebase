@@ -13,16 +13,16 @@ const useStyles = makeStyles()((theme) => ({
 
 const Search = () => {
   const { classes } = useStyles();
-  const [input, setInput] = useState("")
+  const [input, setInput] = useState("");
 
   return (
-    <Box m={2} mt={1}>
+    <Box m={2}>
       <Input
         className={classes.input}
         fullWidth
         disableUnderline
         placeholder="Search Chat"
-        onChange={(e)=>setInput(e.target.value)}
+        onChange={(e) => setInput(e.target.value)}
         value={input}
       />
     </Box>

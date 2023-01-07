@@ -2,38 +2,40 @@ import { Box, Typography } from "@mui/material";
 import { makeStyles } from "tss-react/mui";
 import db from "../../utils/db.json";
 
-const useStyles = makeStyles()((theme) => ({
-  scrollBox: {
-    overflowY: "scroll",
-  },
-
-  message: {
-    minHeight: "min-content",
-    position: "relative",
-    borderRadius: "10px",
-    marginRight: "auto",
-    backgroundColor: theme.palette.text.secondary,
-  },
-
-  ownMessage: {
-    marginRight: "0",
-    marginLeft: "auto",
-    backgroundColor: theme.palette.primary.main,
-    color: theme.palette.primary.contrastText,
-    "& $messageInfo": {
-      right: "5px",
-      left: "auto",
+const useStyles = makeStyles<void, "messageInfo">()(
+  (theme, _params, classes) => ({
+    scrollBox: {
+      overflowY: "scroll",
     },
-  },
 
-  messageInfo: {
-    position: "absolute",
-    top: "-20px",
-    left: "5px",
-    color: theme.palette.text.secondary,
-    fontWeight: "bold",
-  },
-}));
+    message: {
+      minHeight: "min-content",
+      position: "relative",
+      borderRadius: "10px",
+      marginRight: "auto",
+      backgroundColor: theme.palette.text.secondary,
+    },
+
+    ownMessage: {
+      marginRight: "0",
+      marginLeft: "auto",
+      backgroundColor: theme.palette.primary.main,
+      color: theme.palette.primary.contrastText,
+      [`& .${classes.messageInfo}`]: {
+        right: "5px",
+        left: "auto",
+      },
+    },
+
+    messageInfo: {
+      position: "absolute",
+      top: "-20px",
+      left: "5px",
+      color: theme.palette.text.secondary,
+      fontWeight: "bold",
+    },
+  })
+);
 
 const Messages = () => {
   const { classes } = useStyles();
