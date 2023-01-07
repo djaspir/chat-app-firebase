@@ -1,4 +1,4 @@
-import Box from "@mui/material/Box";
+import { Box } from "@mui/material";
 import Groups from "./Groups";
 import Search from "./Search";
 import UserPanel from "./UserPanel";
@@ -13,7 +13,7 @@ const Sidebar = () => {
       borderTop={0}
       borderBottom={0}
       borderLeft={0}
-      borderColor="rgba(0, 0, 0, 0.1)"
+      borderColor={"divider"}
     >
       <UserPanel />
       <Search />

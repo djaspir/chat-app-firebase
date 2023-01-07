@@ -1,48 +1,10 @@
-import { CssBaseline } from "@mui/material";
-import { createTheme, ThemeProvider } from "@mui/material/styles";
+import { CssBaseline, ThemeProvider } from "@mui/material";
 import React from "react";
 import ReactDOM from "react-dom/client";
 import App from "./App";
+import { theme, darkTheme } from "./theme/themes";
 
 // TODO Theming with Redux
-
-const theme = createTheme({
-  components: {
-    MuiCssBaseline: {
-      styleOverrides: {
-        "::-webkit-scrollbar": {
-          width: "10px"
-        },
-        "::-webkit-scrollbar-track": {
-          backgroundColor: "transparent"
-        },
-        "::-webkit-scrollbar-thumb": {
-          backgroundColor: "#d6dee1",
-          borderRadius: "20px",
-          width: "10px"
-        }
-      }
-    },
-  },
-
-  typography: {
-    button: {
-      textTransform: "none",
-    },
-  },
-});
-
-const darkTheme = createTheme({
-  typography: {
-    button: {
-      textTransform: "none",
-    },
-  },
-
-  palette: {
-    mode: "dark",
-  },
-});
 
 const root = ReactDOM.createRoot(
   document.getElementById("root") as HTMLElement

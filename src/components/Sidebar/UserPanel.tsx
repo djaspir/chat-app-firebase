@@ -2,14 +2,12 @@ import AddIcon from "@mui/icons-material/Add";
 import Brightness4Icon from "@mui/icons-material/Brightness4";
 import Brightness7Icon from "@mui/icons-material/Brightness7";
 import MoreHorizIcon from "@mui/icons-material/MoreHoriz";
-import Avatar from "@mui/material/Avatar";
-import Box from "@mui/material/Box";
-import IconButton from "@mui/material/IconButton";
-import Typography from "@mui/material/Typography";
+import { Avatar, Box, IconButton, Typography } from "@mui/material";
 import { makeStyles } from "tss-react/mui";
 
 const useStyles = makeStyles()((theme) => ({
-  bold: {
+  title: {
+    marginLeft: theme.spacing(1),
     fontWeight: 700,
   },
 
@@ -20,30 +18,24 @@ const useStyles = makeStyles()((theme) => ({
 
 const UserPanel = () => {
   const { classes } = useStyles();
+  const darkTheme = false;
 
   return (
-    <Box
-      display="flex"
-      alignItems="center"
-      justifyContent="space-between"
-      m={2}
-    >
-      <Box display="flex" alignItems="center" width="100%">
-        <Avatar />
-        <Box ml={1}>
-          <Typography className={classes.bold} variant="h5">
-            Chats
-          </Typography>
-        </Box>
-      </Box>
+    <Box display="flex" justifyContent="space-between" m={2}>
       <Box display="flex" alignItems="center">
+        <Avatar />
+        <Typography className={classes.title} variant="h5">
+          Chats
+        </Typography>
+      </Box>
+      <Box display="flex">
         <IconButton className={classes.iconButton}>
           <MoreHorizIcon />
         </IconButton>
         <IconButton className={classes.iconButton}>
           <AddIcon />
         </IconButton>
-        {true ? (
+        {darkTheme ? (
           <IconButton className={classes.iconButton}>
             <Brightness4Icon />
           </IconButton>

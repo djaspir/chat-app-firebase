@@ -1,5 +1,4 @@
-import Box from "@mui/material/Box";
-import Input from "@mui/material/Input";
+import { Box, Input } from "@mui/material";
 import { makeStyles } from "tss-react/mui";
 
 const useStyles = makeStyles()((theme) => ({
@@ -7,7 +6,7 @@ const useStyles = makeStyles()((theme) => ({
     paddingRight: theme.spacing(2),
     paddingLeft: theme.spacing(2),
     borderRadius: "50px",
-    backgroundColor: "rgba(0, 0, 0, 0.05)",
+    backgroundColor: theme.palette.action.hover,
   },
 }));
 
