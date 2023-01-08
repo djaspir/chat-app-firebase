@@ -23,9 +23,9 @@ import {
 import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { makeStyles } from "tss-react/mui";
-import { toggleDarkTheme } from "../../state/actions";
-import { AppState } from "../../state/store/store";
-import db from "../../utils/db.json";
+import { toggleDarkTheme } from "../../../state/actions";
+import { AppState } from "../../../state/store/store";
+import db from "../../../utils/db.json";
 
 const useStyles = makeStyles()((theme) => ({
   title: {
