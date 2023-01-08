@@ -1,6 +1,6 @@
-import BlockOutlinedIcon from "@mui/icons-material/BlockOutlined";
-import DeleteOutlinedIcon from "@mui/icons-material/DeleteOutlined";
-import MoreHorizIcon from "@mui/icons-material/MoreHoriz";
+import AddIcon from "@mui/icons-material/Add";
+import PersonOutlinedIcon from "@mui/icons-material/PersonOutlined";
+import PeopleOutlinedIcon from "@mui/icons-material/PeopleOutlined";
 
 import { useState } from "react";
 
@@ -12,10 +12,10 @@ import {
   MenuItem,
 } from "@mui/material";
 
-const PrivateMenu = () => {
+const AddChatMenu = () => {
   const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null);
 
-  const openMenu = (e: React.MouseEvent<HTMLElement>) => {
+  const openMenu = (e: React.MouseEvent<HTMLButtonElement>) => {
     setAnchorEl(e.currentTarget);
   };
 
@@ -26,7 +26,7 @@ const PrivateMenu = () => {
   return (
     <>
       <IconButton onClick={openMenu}>
-        <MoreHorizIcon />
+        <AddIcon />
       </IconButton>
       <Menu
         anchorEl={anchorEl}
@@ -36,19 +36,19 @@ const PrivateMenu = () => {
       >
         <MenuItem onClick={handleClose}>
           <ListItemIcon>
-            <BlockOutlinedIcon fontSize="small" />
+            <PersonOutlinedIcon fontSize="small" />
           </ListItemIcon>
-          <ListItemText primary="Block" />
+          <ListItemText primary="Private" />
         </MenuItem>
         <MenuItem onClick={handleClose}>
           <ListItemIcon>
-            <DeleteOutlinedIcon fontSize="small" />
+            <PeopleOutlinedIcon fontSize="small" />
           </ListItemIcon>
-          <ListItemText primary="Delete" />
+          <ListItemText primary="Group" />
         </MenuItem>
       </Menu>
     </>
   );
 };
 
-export default PrivateMenu;
+export default AddChatMenu;

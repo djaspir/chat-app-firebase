@@ -7,7 +7,6 @@ import MoreHorizIcon from "@mui/icons-material/MoreHoriz";
 import { useState } from "react";
 
 import {
-  Box,
   IconButton,
   ListItemIcon,
   ListItemText,
@@ -29,7 +28,7 @@ const GroupMenu = () => {
   };
 
   return (
-    <Box>
+    <>
       <IconButton onClick={openMenu}>
         <MoreHorizIcon />
       </IconButton>
@@ -67,7 +66,7 @@ const GroupMenu = () => {
           </MenuItem>
         )}
       </Menu>
-    </Box>
+    </>
   );
 };
 
