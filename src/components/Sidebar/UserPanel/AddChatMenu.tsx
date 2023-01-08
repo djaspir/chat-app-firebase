@@ -31,8 +31,8 @@ const AddChatMenu = () => {
   const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null);
   const [isPrivateDialogOpen, setIsPrivateDialogOpen] = useState(false);
   const [isGroupDialogOpen, setIsGroupDialogOpen] = useState(false);
-  const [inputPrivate, setInputPrivate] = useState("");
-  const [inputGroup, setInputGroup] = useState("");
+  const [privateInput, setPrivateInput] = useState("");
+  const [groupInput, setGroupInput] = useState("");
 
   const openMenu = (e: React.MouseEvent<HTMLButtonElement>) => {
     setAnchorEl(e.currentTarget);
@@ -49,6 +49,7 @@ const AddChatMenu = () => {
 
   const closePrivateDialog = () => {
     setIsPrivateDialogOpen(false);
+    setPrivateInput("");
   };
 
   const openGroupDialog = () => {
@@ -58,18 +59,19 @@ const AddChatMenu = () => {
 
   const closeGroupDialog = () => {
     setIsGroupDialogOpen(false);
+    setGroupInput("");
   };
 
   const createPrivateChat = () => {};
 
   const handlePrivateInput = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setInputPrivate(e.currentTarget.value);
+    setPrivateInput(e.currentTarget.value);
   };
 
   const createGroupChat = () => {};
 
   const handleGroupInput = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setInputGroup(e.currentTarget.value);
+    setGroupInput(e.currentTarget.value);
   };
 
   return (
@@ -108,7 +110,7 @@ const AddChatMenu = () => {
           <Input
             placeholder="Search Person"
             onChange={handlePrivateInput}
-            value={inputPrivate}
+            value={privateInput}
           />
           <Box display="flex" justifyContent="space-between" mt={2}>
             <Button
@@ -140,7 +142,7 @@ const AddChatMenu = () => {
           <Input
             placeholder="Name"
             onChange={handleGroupInput}
-            value={inputGroup}
+            value={groupInput}
           />
           <Box display="flex" justifyContent="space-between" mt={2}>
             <Button
