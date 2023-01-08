@@ -19,7 +19,7 @@ const useStyles = makeStyles<void, "messageInfo">()(
     ownMessage: {
       marginRight: "0",
       marginLeft: "auto",
-      backgroundColor: theme.palette.primary.main,
+      backgroundColor: theme.palette.primary.light,
       color: theme.palette.primary.contrastText,
       [`& .${classes.messageInfo}`]: {
         right: "5px",

@@ -1,8 +1,10 @@
-import { CssBaseline, ThemeProvider } from "@mui/material";
+import { CssBaseline } from "@mui/material";
 import React from "react";
 import ReactDOM from "react-dom/client";
+import { Provider } from "react-redux";
 import App from "./App";
-import { theme, darkTheme } from "./theme/themes";
+import { store } from "./state/store/store";
+import DarkThemeProvider from "./theme/DarkThemeProvider";
 
 // TODO Theming with Redux
 
@@ -11,9 +13,11 @@ const root = ReactDOM.createRoot(
 );
 root.render(
   <React.StrictMode>
-    <ThemeProvider theme={true ? theme : darkTheme}>
-      <CssBaseline />
-      <App />
-    </ThemeProvider>
+    <Provider store={store}>
+      <DarkThemeProvider>
+        <CssBaseline />
+        <App />
+      </DarkThemeProvider>
+    </Provider>
   </React.StrictMode>
 );
