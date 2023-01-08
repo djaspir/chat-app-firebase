@@ -1,7 +1,9 @@
+import { useState } from "react";
+
+import { Box, IconButton, Input } from "@mui/material";
 import EmojiEmotionsIcon from "@mui/icons-material/EmojiEmotions";
 import SendIcon from "@mui/icons-material/Send";
-import { Box, IconButton, Input } from "@mui/material";
-import { useState } from "react";
+
 import { makeStyles } from "tss-react/mui";
 
 const useStyles = makeStyles()((theme) => ({

@@ -1,4 +1,5 @@
-import Box from "@mui/material/Box";
+import { Box } from "@mui/material";
+
 import ChatPanel from "./ChatPanel/ChatPanel";
 import Messages from "./Messages";
 import SendBox from "./SendBox";

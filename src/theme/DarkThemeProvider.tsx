@@ -1,7 +1,9 @@
 import React from "react";
 import { useSelector } from "react-redux";
-import { createTheme, ThemeProvider } from "@mui/material";
+
 import { AppState } from "../state/store/store";
+
+import { createTheme, ThemeProvider } from "@mui/material";
 
 interface IProps {
   children: React.ReactNode;
@@ -43,10 +45,10 @@ const DarkThemeProvider = ({ children }: IProps) => {
         styleOverrides: {
           root: {
             minWidth: 0,
-            marginRight: defaultTheme.spacing(2)
-          }
-        }
-      }
+            marginRight: defaultTheme.spacing(2),
+          },
+        },
+      },
     },
   });
 
