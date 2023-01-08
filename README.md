@@ -18,3 +18,7 @@ npm start
 - [Redux](https://redux.js.org/)
 - [Firebase](https://firebase.google.com/)
 - [Material UI](https://material-ui.com/)
+
+## License
+
+This project is licensed under the [MIT License](https://github.com/djaspir/chat-app-firebase/blob/main/LICENSE)
