@@ -39,6 +39,12 @@ const DarkThemeProvider = ({ children }: IProps) => {
             borderRadius: "20px",
             width: "10px",
           },
+
+          [defaultTheme.breakpoints.down("sm")]: {
+            "*::-webkit-scrollbar": {
+              width: "0px",
+            }
+          }
         },
       },
       MuiListItemIcon: {

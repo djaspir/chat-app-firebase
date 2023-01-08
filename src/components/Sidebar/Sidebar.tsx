@@ -1,5 +1,4 @@
-import SettingsIcon from "@mui/icons-material/Settings";
-import { Box, IconButton } from "@mui/material";
+import { Box } from "@mui/material";
 import { makeStyles } from "tss-react/mui";
 import Groups from "./Groups";
 import Search from "./Search";
@@ -10,14 +9,6 @@ const useStyles = makeStyles<void, "showSm" | "hideSm">()(
     sidebar: {
       [theme.breakpoints.down("sm")]: {
         width: "90px",
-
-        [`& .${classes.hideSm}`]: {
-          display: "none",
-        },
-
-        [`& .${classes.showSm}`]: {
-          display: "block",
-        },
       },
     },
 
@@ -46,15 +37,8 @@ const Sidebar = () => {
       borderLeft={0}
       borderColor={"divider"}
     >
-      <div className={classes.hideSm}>
-        <UserPanel />
-        <Search />
-      </div>
-      <Box className={classes.showSm} display="flex" mx={"auto"} my={1}>
-        <IconButton>
-          <SettingsIcon />
-        </IconButton>
-      </Box>
+      <UserPanel />
+      <Search />
       <Groups />
     </Box>
   );
