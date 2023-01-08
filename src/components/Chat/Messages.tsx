@@ -11,10 +11,10 @@ const useStyles = makeStyles<void, "messageInfo">()(
     },
 
     message: {
-      minHeight: "min-content",
       position: "relative",
       borderRadius: "10px",
       marginRight: "auto",
+      maxWidth: "50vh",
       backgroundColor: theme.palette.text.secondary,
     },
 
@@ -35,6 +35,11 @@ const useStyles = makeStyles<void, "messageInfo">()(
       left: "5px",
       color: theme.palette.text.secondary,
       fontWeight: "bold",
+    },
+
+    messageText: {
+      whiteSpace: "initial",
+      wordWrap: "break-word",
     },
   })
 );
@@ -66,9 +71,12 @@ const Messages = () => {
         >
           <Typography className={classes.messageInfo} variant="caption">
             {/*h {message.sentBy} */}
-            <div>Jasper</div>
+            {message.sentBy === userId ? "You" : "Jasper"}
           </Typography>
-          <div>{message.text}</div>
+          <Typography className={classes.messageText}>
+            {/*{message.text}*/}
+            Message
+          </Typography>
         </Box>
       ))}
     </Box>
