@@ -1,6 +1,7 @@
-import { Avatar, Box, IconButton, Typography } from "@mui/material";
+import { Avatar, Box, Typography } from "@mui/material";
 import { makeStyles } from "tss-react/mui";
-import MoreHorizIcon from "@mui/icons-material/MoreHoriz";
+import GroupMenu from "./GroupMenu";
+import PrivateMenu from "./PrivateMenu";
 
 const useStyles = makeStyles()(() => ({
   bold: {
@@ -10,6 +11,7 @@ const useStyles = makeStyles()(() => ({
 
 const ChatPanel = () => {
   const { classes } = useStyles();
+  const isPrivate = true;
 
   return (
     <Box
@@ -33,11 +35,7 @@ const ChatPanel = () => {
           </Typography>
         </Box>
       </Box>
-      <Box>
-        <IconButton>
-          <MoreHorizIcon />
-        </IconButton>
-      </Box>
+      {isPrivate ? <PrivateMenu /> : <GroupMenu />}
     </Box>
   );
 };

@@ -39,6 +39,14 @@ const DarkThemeProvider = ({ children }: IProps) => {
           },
         },
       },
+      MuiListItemIcon: {
+        styleOverrides: {
+          root: {
+            minWidth: 0,
+            marginRight: defaultTheme.spacing(2)
+          }
+        }
+      }
     },
   });
 
