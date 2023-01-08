@@ -1,6 +1,6 @@
 import AddIcon from "@mui/icons-material/Add";
-import Brightness4Icon from "@mui/icons-material/Brightness4";
-import Brightness7Icon from "@mui/icons-material/Brightness7";
+import Brightness2Icon from "@mui/icons-material/Brightness2";
+import WbSunnyIcon from "@mui/icons-material/WbSunny";
 import MoreHorizIcon from "@mui/icons-material/MoreHoriz";
 import { Avatar, Box, IconButton, Typography } from "@mui/material";
 import { useDispatch, useSelector } from "react-redux";
@@ -48,14 +48,14 @@ const UserPanel = () => {
             className={classes.iconButton}
             onClick={() => dispatch(toggleDarkTheme())}
           >
-            <Brightness7Icon />
+            <WbSunnyIcon />
           </IconButton>
         ) : (
           <IconButton
             className={classes.iconButton}
             onClick={() => dispatch(toggleDarkTheme())}
           >
-            <Brightness4Icon />
+            <Brightness2Icon />
           </IconButton>
         )}
       </Box>
