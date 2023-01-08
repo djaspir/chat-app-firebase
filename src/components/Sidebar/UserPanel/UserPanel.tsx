@@ -4,7 +4,6 @@ import WbSunnyIcon from "@mui/icons-material/WbSunny";
 
 import { Avatar, Box, IconButton, Typography } from "@mui/material";
 
-import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { makeStyles } from "tss-react/mui";
 import { toggleDarkTheme } from "../../../state/actions";
@@ -46,15 +45,14 @@ const UserPanel = () => {
         <OptionsMenu />
         <AddChatMenu />
         {darkThemeEnabled ? (
-        <IconButton onClick={() => dispatch(toggleDarkTheme())}>
-          <WbSunnyIcon />
-        </IconButton>
+          <IconButton onClick={() => dispatch(toggleDarkTheme())}>
+            <WbSunnyIcon />
+          </IconButton>
         ) : (
-        <IconButton onClick={() => dispatch(toggleDarkTheme())}>
-          <Brightness2Icon />
-        </IconButton>
-        )
-        }
+          <IconButton onClick={() => dispatch(toggleDarkTheme())}>
+            <Brightness2Icon />
+          </IconButton>
+        )}
       </Box>
     </Box>
   );

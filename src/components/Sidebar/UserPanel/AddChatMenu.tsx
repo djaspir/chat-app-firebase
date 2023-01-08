@@ -1,6 +1,6 @@
 import AddIcon from "@mui/icons-material/Add";
-import PersonOutlinedIcon from "@mui/icons-material/PersonOutlined";
-import PeopleOutlinedIcon from "@mui/icons-material/PeopleOutlined";
+import PersonIcon from "@mui/icons-material/Person";
+import PeopleIcon from "@mui/icons-material/People";
 
 import { useState } from "react";
 
@@ -36,13 +36,13 @@ const AddChatMenu = () => {
       >
         <MenuItem onClick={handleClose}>
           <ListItemIcon>
-            <PersonOutlinedIcon fontSize="small" />
+            <PersonIcon fontSize="small" />
           </ListItemIcon>
           <ListItemText primary="Private" />
         </MenuItem>
         <MenuItem onClick={handleClose}>
           <ListItemIcon>
-            <PeopleOutlinedIcon fontSize="small" />
+            <PeopleIcon fontSize="small" />
           </ListItemIcon>
           <ListItemText primary="Group" />
         </MenuItem>

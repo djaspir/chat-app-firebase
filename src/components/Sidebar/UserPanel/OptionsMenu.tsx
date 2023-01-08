@@ -9,9 +9,9 @@ import {
 } from "@mui/material";
 import MoreHorizIcon from "@mui/icons-material/MoreHoriz";
 import ExitToAppIcon from "@mui/icons-material/ExitToApp";
-import SettingsOutlinedIcon from "@mui/icons-material/SettingsOutlined";
-import HelpOutlineIcon from "@mui/icons-material/HelpOutline";
-import ReportOutlinedIcon from "@mui/icons-material/ReportOutlined";
+import SettingsIcon from "@mui/icons-material/Settings";
+import HelpIcon from "@mui/icons-material/Help";
+import ReportIcon from "@mui/icons-material/Report";
 
 const OptionsMenu = () => {
   const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null);
@@ -37,19 +37,19 @@ const OptionsMenu = () => {
       >
         <MenuItem onClick={handleClose}>
           <ListItemIcon>
-            <SettingsOutlinedIcon fontSize="small" />
+            <SettingsIcon fontSize="small" />
           </ListItemIcon>
           <ListItemText primary="Preferences" />
         </MenuItem>
         <MenuItem onClick={handleClose}>
           <ListItemIcon>
-            <HelpOutlineIcon fontSize="small" />
+            <HelpIcon fontSize="small" />
           </ListItemIcon>
           <ListItemText primary="Help" />
         </MenuItem>
         <MenuItem onClick={handleClose}>
           <ListItemIcon>
-            <ReportOutlinedIcon fontSize="small" />
+            <ReportIcon fontSize="small" />
           </ListItemIcon>
           <ListItemText primary="Report an Issue" />
         </MenuItem>

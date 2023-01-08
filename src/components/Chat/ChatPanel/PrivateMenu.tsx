@@ -1,5 +1,5 @@
-import BlockOutlinedIcon from "@mui/icons-material/BlockOutlined";
-import DeleteOutlinedIcon from "@mui/icons-material/DeleteOutlined";
+import BlockIcon from "@mui/icons-material/Block";
+import DeleteIcon from "@mui/icons-material/Delete";
 import MoreHorizIcon from "@mui/icons-material/MoreHoriz";
 
 import { useState } from "react";
@@ -36,13 +36,13 @@ const PrivateMenu = () => {
       >
         <MenuItem onClick={handleClose}>
           <ListItemIcon>
-            <BlockOutlinedIcon fontSize="small" />
+            <BlockIcon fontSize="small" />
           </ListItemIcon>
           <ListItemText primary="Block" />
         </MenuItem>
         <MenuItem onClick={handleClose}>
           <ListItemIcon>
-            <DeleteOutlinedIcon fontSize="small" />
+            <DeleteIcon fontSize="small" />
           </ListItemIcon>
           <ListItemText primary="Delete" />
         </MenuItem>

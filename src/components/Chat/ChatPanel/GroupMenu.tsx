@@ -1,6 +1,6 @@
-import AddOutlinedIcon from "@mui/icons-material/AddOutlined";
-import DeleteOutlinedIcon from "@mui/icons-material/DeleteOutlined";
-import EditOutlineIcon from "@mui/icons-material/EditOutlined";
+import AddIcon from "@mui/icons-material/Add";
+import EditIcon from "@mui/icons-material/Edit"
+import DeleteIcon from "@mui/icons-material/Delete";
 import ExitToAppIcon from "@mui/icons-material/ExitToApp";
 import MoreHorizIcon from "@mui/icons-material/MoreHoriz";
 
@@ -40,20 +40,20 @@ const GroupMenu = () => {
       >
         <MenuItem onClick={handleClose}>
           <ListItemIcon>
-            <AddOutlinedIcon fontSize="small" />
+            <AddIcon fontSize="small" />
           </ListItemIcon>
           <ListItemText primary="Add Person" />
         </MenuItem>
         <MenuItem onClick={handleClose}>
           <ListItemIcon>
-            <EditOutlineIcon fontSize="small" />
+            <EditIcon fontSize="small" />
           </ListItemIcon>
           <ListItemText primary="Rename" />
         </MenuItem>
         {isOwner ? (
           <MenuItem onClick={handleClose}>
             <ListItemIcon>
-              <DeleteOutlinedIcon fontSize="small" />
+              <DeleteIcon fontSize="small" />
             </ListItemIcon>
             <ListItemText primary="Delete" />
           </MenuItem>
