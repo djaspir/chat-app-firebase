@@ -1,9 +1,9 @@
+import SettingsIcon from "@mui/icons-material/Settings";
 import { Box, IconButton } from "@mui/material";
 import { makeStyles } from "tss-react/mui";
 import Groups from "./Groups";
 import Search from "./Search";
 import UserPanel from "./UserPanel";
-import SettingsIcon from "@mui/icons-material/Settings";
 
 const useStyles = makeStyles<void, "showSm" | "hideSm">()(
   (theme, _params, classes) => ({
