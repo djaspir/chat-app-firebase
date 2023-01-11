@@ -1,5 +1,8 @@
-import { useState } from "react";
-
+import ExitToAppIcon from "@mui/icons-material/ExitToApp";
+import HelpIcon from "@mui/icons-material/Help";
+import MoreHorizIcon from "@mui/icons-material/MoreHoriz";
+import ReportIcon from "@mui/icons-material/Report";
+import SettingsIcon from "@mui/icons-material/Settings";
 import {
   IconButton,
   ListItemIcon,
@@ -7,11 +10,9 @@ import {
   Menu,
   MenuItem,
 } from "@mui/material";
-import MoreHorizIcon from "@mui/icons-material/MoreHoriz";
-import ExitToAppIcon from "@mui/icons-material/ExitToApp";
-import SettingsIcon from "@mui/icons-material/Settings";
-import HelpIcon from "@mui/icons-material/Help";
-import ReportIcon from "@mui/icons-material/Report";
+import { signOut } from "firebase/auth";
+import { useState } from "react";
+import { auth } from "../../../firebase";
 
 const OptionsMenu = () => {
   const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null);
@@ -53,7 +54,7 @@ const OptionsMenu = () => {
           </ListItemIcon>
           <ListItemText primary="Report an Issue" />
         </MenuItem>
-        <MenuItem onClick={handleClose}>
+        <MenuItem onClick={() => signOut(auth)}>
           <ListItemIcon>
             <ExitToAppIcon fontSize="small" />
           </ListItemIcon>

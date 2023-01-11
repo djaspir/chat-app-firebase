@@ -3,6 +3,10 @@ import logo from "../assets/logo192.png";
 import { Box, Button, Typography } from "@mui/material";
 import { makeStyles } from "tss-react/mui";
 
+import { collection, doc, setDoc } from "firebase/firestore";
+import { auth, db, provider, User } from "../firebase";
+import { signInWithPopup } from "firebase/auth";
+
 const useStyles = makeStyles()((theme) => ({
   container: {
     backgroundColor: theme.palette.action.selected,
@@ -31,6 +35,23 @@ const useStyles = makeStyles()((theme) => ({
 
 const Login = () => {
   const { classes } = useStyles();
+
+  const signInWithGoogle = async () => {
+    const { user } = await signInWithPopup(auth, provider);
+    saveUserData(user);
+  };
+
+  const saveUserData = (user: User) => {
+    if (!user) return;
+
+    const userRef = collection(db, "users");
+    setDoc(doc(userRef, user.uid), {
+      uid: user.uid,
+      displayName: user.displayName,
+      email: user.email,
+      photoURL: user.photoURL,
+    });
+  };
 
   return (
     <Box
@@ -63,7 +84,11 @@ const Login = () => {
             <img className={classes.image} src={logo} alt="" />
           </Box>
           <Typography className={classes.title}>Welcome to ChatApp</Typography>
-          <Button variant="contained" color="primary">
+          <Button
+            onClick={signInWithGoogle}
+            variant="contained"
+            color="primary"
+          >
             Sign in with Google
           </Button>
         </Box>

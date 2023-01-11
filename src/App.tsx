@@ -1,11 +1,13 @@
 import { Box } from "@mui/material";
 
+import { useAuthState } from "react-firebase-hooks/auth";
 import Chat from "./components/Chat";
-import Sidebar from "./components/Sidebar";
 import Login from "./components/Login";
+import Sidebar from "./components/Sidebar";
+import { auth } from "./firebase";
 
 const App = () => {
-  const user = false;
+  const [user, loading] = useAuthState(auth);
 
   return (
     <Box display="flex" height="100vh">
@@ -14,6 +16,8 @@ const App = () => {
           <Sidebar />
           <Chat />
         </>
+      ) : loading ? (
+        ""
       ) : (
         <Login />
       )}
