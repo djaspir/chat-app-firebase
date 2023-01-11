@@ -45,12 +45,16 @@ const Login = () => {
     if (!user) return;
 
     const userRef = collection(db, "users");
-    setDoc(doc(userRef, user.uid), {
-      uid: user.uid,
-      displayName: user.displayName,
-      email: user.email,
-      photoURL: user.photoURL,
-    });
+    setDoc(
+      doc(userRef, user.uid),
+      {
+        uid: user.uid,
+        displayName: user.displayName,
+        email: user.email,
+        photoURL: user.photoURL,
+      },
+      { merge: true }
+    );
   };
 
   return (
