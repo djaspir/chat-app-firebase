@@ -1,9 +1,9 @@
 import { Box, Button, Typography } from "@mui/material";
-import { signInWithPopup } from "firebase/auth";
+import { signInWithPopup, User } from "firebase/auth";
 import { collection, doc, setDoc } from "firebase/firestore";
 import { makeStyles } from "tss-react/mui";
 import logo from "../assets/logo192.png";
-import { auth, db, provider, User } from "../firebase";
+import { auth, db, provider } from "../firebase";
 
 const useStyles = makeStyles()((theme) => ({
   container: {
@@ -36,15 +36,12 @@ const Login = () => {
 
   const signInWithGoogle = async () => {
     const { user } = await signInWithPopup(auth, provider);
-    saveUserData(user);
+    if (user) saveUserData(user);
   };
 
   const saveUserData = (user: User) => {
-    if (!user) return;
-
-    const userRef = collection(db, "users");
     setDoc(
-      doc(userRef, user.uid),
+      doc(collection(db, "users"), user.uid),
       {
         uid: user.uid,
         displayName: user.displayName,

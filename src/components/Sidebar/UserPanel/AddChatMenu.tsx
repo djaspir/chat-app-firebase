@@ -71,9 +71,7 @@ const AddChatMenu = () => {
 
   const createGroupChat = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-
-    const groupRef = collection(db, "groups");
-    addDoc(groupRef, {
+    addDoc(collection(db, "groups"), {
       name: input,
       ownerId: auth.currentUser?.uid,
       member: [auth.currentUser?.uid],
@@ -146,7 +144,7 @@ const AddChatMenu = () => {
           >
             Create Group Chat
           </Typography>
-          <form onSubmit={createGroupChat}> 
+          <form onSubmit={createGroupChat}>
             <Input placeholder="Name" onChange={handleInput} value={input} />
             <Box display="flex" justifyContent="space-between" mt={2}>
               <Button color="primary" variant="contained" type="submit">
