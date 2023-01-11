@@ -1,5 +1,4 @@
-import { Box } from "@mui/material";
-
+import { Box, CircularProgress } from "@mui/material";
 import { useAuthState } from "react-firebase-hooks/auth";
 import Chat from "./components/Chat";
 import Login from "./components/Login";
@@ -11,13 +10,15 @@ const App = () => {
 
   return (
     <Box display="flex" height="100vh">
-      {user ? (
+      {loading ? (
+        <Box margin="auto">
+          <CircularProgress size="150px" />
+        </Box>
+      ) : user ? (
         <>
           <Sidebar />
           <Chat />
         </>
-      ) : loading ? (
-        ""
       ) : (
         <Login />
       )}

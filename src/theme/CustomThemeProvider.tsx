@@ -9,7 +9,7 @@ interface IProps {
   children: React.ReactNode;
 }
 
-const DarkThemeProvider = ({ children }: IProps) => {
+const CustomThemeProvider = ({ children }: IProps) => {
   const darkThemeEnabled = useSelector(
     (state: AppState) => state.darkThemeEnabled
   );
@@ -31,9 +31,11 @@ const DarkThemeProvider = ({ children }: IProps) => {
           "*::-webkit-scrollbar": {
             width: "10px",
           },
+
           "*::-webkit-scrollbar-track": {
             backgroundColor: "transparent",
           },
+
           "*::-webkit-scrollbar-thumb": {
             backgroundColor: defaultTheme.palette.action.disabled,
             borderRadius: "20px",
@@ -43,15 +45,15 @@ const DarkThemeProvider = ({ children }: IProps) => {
           [defaultTheme.breakpoints.down("sm")]: {
             "*::-webkit-scrollbar": {
               width: "0px",
-            }
-          }
+            },
+          },
         },
       },
       MuiListItemIcon: {
         styleOverrides: {
           root: {
             minWidth: 0,
-            marginRight: defaultTheme.spacing(1),
+            marginRight: defaultTheme.spacing(1.5),
           },
         },
       },
@@ -61,4 +63,4 @@ const DarkThemeProvider = ({ children }: IProps) => {
   return <ThemeProvider theme={theme}>{children}</ThemeProvider>;
 };
 
-export default DarkThemeProvider;
+export default CustomThemeProvider;

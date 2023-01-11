@@ -1,11 +1,9 @@
-import logo from "../assets/logo192.png";
-
 import { Box, Button, Typography } from "@mui/material";
-import { makeStyles } from "tss-react/mui";
-
-import { collection, doc, setDoc } from "firebase/firestore";
-import { auth, db, provider, User } from "../firebase";
 import { signInWithPopup } from "firebase/auth";
+import { collection, doc, setDoc } from "firebase/firestore";
+import { makeStyles } from "tss-react/mui";
+import logo from "../assets/logo192.png";
+import { auth, db, provider, User } from "../firebase";
 
 const useStyles = makeStyles()((theme) => ({
   container: {
