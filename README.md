@@ -1,4 +1,4 @@
-# Chat App Firebase
+# Chat App Firebase (On-going)
 
 [Live Demo](https://djaspir.github.io/chat-app/) :point_left:
 
